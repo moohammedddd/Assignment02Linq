@@ -91,8 +91,18 @@ namespace Assignment02
             //Console.WriteLine(result);
             #endregion
             #region Q8
-            var result = words.Select(p => p.Length).Average();
-            Console.WriteLine(result);
+            //var result = words.Select(p => p.Length).Average();
+            //Console.WriteLine(result);
+            #endregion
+            #region Q9
+            var result = from p in ProductList
+                         group p by p.Category into g
+                         select new
+                         {
+                             Category = g.Key,
+                             TotalUnitStock = g.Sum(p => p.UnitsInStock)
+                         };
+            foreach (var item in result) Console.WriteLine(item);
             #endregion
             #endregion
         }
