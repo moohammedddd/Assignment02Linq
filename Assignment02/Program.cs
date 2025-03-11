@@ -13,7 +13,10 @@ namespace Assignment02
         static void Main(string[] args)
         {
             #region Element Operator
-            
+            #region Q1 Get first Product out of Stock
+            var result0 = ProductList.First(p => p.UnitsInStock == 0);
+            Console.WriteLine(result0);
+            #endregion
             #endregion
 
         }
