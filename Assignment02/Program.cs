@@ -35,11 +35,29 @@ namespace Assignment02
 
             #region Aggergate Operators 
             #region Q1 Uses Count to get the number of odd numbers in the array
-            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var result = Arr.Count(p => p %2 == 0);
-            var result01 = Arr.Count(p =>  p %2  == 1);
-            Console.WriteLine(result);
-            Console.WriteLine(result01);
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Count(p => p %2 == 0);
+            //var result01 = Arr.Count(p =>  p %2  == 1);
+            //Console.WriteLine(result);
+            //Console.WriteLine(result01);
+            #endregion
+            #region Q2 2. Return a list of customers and how many orders each has.
+            //var result = CustomerList.Select(p => p.CustomerName && p.Order.Count() );
+
+            var result = from p in CustomerList
+                         select new
+                         {
+                            OrderName=  p.CustomerName,
+                            OrderCount =  p.Orders.Count(),
+                        };
+           foreach(var item in result) Console.WriteLine(item);
+
+            // Using Flued Syntax 
+            var result01 = CustomerList.Select(p => new
+            {
+              CustomerName =  p.CustomerName,
+               OrderCount =  p.Orders.Count()
+            });
             #endregion
             #endregion
         }
