@@ -87,7 +87,11 @@ namespace Assignment02
 
             #endregion
             #region Q7
-            var result = words.Select(p => p.Length).Max();
+            //var result = words.Select(p => p.Length).Max();
+            //Console.WriteLine(result);
+            #endregion
+            #region Q8
+            var result = words.Select(p => p.Length).Average();
             Console.WriteLine(result);
             #endregion
             #endregion
