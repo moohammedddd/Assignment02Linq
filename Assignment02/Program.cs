@@ -77,8 +77,14 @@ namespace Assignment02
             #endregion
             #region Q5
             var words = File.ReadAllLines("dictionary_english.txt");
-            var result = words.Sum(p => p.Length);
+            //var result = words.Sum(p => p.Length);
+            //Console.WriteLine(result);
+            #endregion
+            #region Q6
+            var result = words.Select(p => p.Length).Min();
             Console.WriteLine(result);
+
+
             #endregion
             #endregion
         }
