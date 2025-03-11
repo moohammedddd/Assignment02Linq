@@ -24,13 +24,24 @@ namespace Assignment02
             #endregion
 
             #region Q3 Retrieve the second number greater than 5 
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Where(x => x > 5).ElementAt(1);
+            //Console.WriteLine(result);
+            #endregion
+
+
+
+            #endregion
+
+            #region Aggergate Operators 
+            #region Q1 Uses Count to get the number of odd numbers in the array
             int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var result = Arr.Where(x => x > 5).ElementAt(1);
+            var result = Arr.Count(p => p %2 == 0);
+            var result01 = Arr.Count(p =>  p %2  == 1);
             Console.WriteLine(result);
+            Console.WriteLine(result01);
             #endregion
-
             #endregion
-
         }
     }
 }
