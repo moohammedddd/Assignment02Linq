@@ -105,14 +105,27 @@ namespace Assignment02
             //foreach (var item in result) Console.WriteLine(item);
             #endregion
             #region Q10
+            //var result = from p in ProductList
+            //             group p by p.Category into g
+            //             select new
+            //             {
+            //                 Category = g.Key,
+            //                 ChepestSalary = g.Min(g => g.UnitPrice)
+            //             };
+            //foreach (var item in result) Console.WriteLine(item);
+            #endregion
+            #region Q11
             var result = from p in ProductList
                          group p by p.Category into g
+                         let minPrice = g.Min(p => p.UnitPrice)
                          select new
                          {
                              Category = g.Key,
-                             ChepestSalary = g.Min(g => g.UnitPrice)
+                             price = minPrice
                          };
-            foreach (var item in result) Console.WriteLine(item);
+
+            foreach(var item in result) Console.WriteLine(item);
+
             #endregion
             #endregion
         }
