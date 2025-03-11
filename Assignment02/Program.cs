@@ -14,8 +14,13 @@ namespace Assignment02
         {
             #region Element Operator
             #region Q1 Get first Product out of Stock
-            var result0 = ProductList.First(p => p.UnitsInStock == 0);
-            Console.WriteLine(result0);
+            //var result0 = ProductList.First(p => p.UnitsInStock == 0);
+            //Console.WriteLine(result0);
+            #endregion
+
+            #region Q2  2. Return the first product whose Price > 1000, unless there is no match, in which case null is returned.
+            var result = ProductList.FirstOrDefault(p => p.UnitPrice > 1000);
+            Console.WriteLine(result);
             #endregion
             #endregion
 
