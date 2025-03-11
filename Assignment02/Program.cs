@@ -115,16 +115,24 @@ namespace Assignment02
             //foreach (var item in result) Console.WriteLine(item);
             #endregion
             #region Q11
-            var result = from p in ProductList
-                         group p by p.Category into g
-                         let minPrice = g.Min(p => p.UnitPrice)
-                         select new
-                         {
-                             Category = g.Key,
-                             price = minPrice
-                         };
+            //var result = from p in ProductList
+            //             group p by p.Category into g
+            //             let minPrice = g.Min(p => p.UnitPrice)
+            //             select new
+            //             {
+            //                 Category = g.Key,
+            //                 price = minPrice
+            //             };
 
-            foreach(var item in result) Console.WriteLine(item);
+            //foreach(var item in result) Console.WriteLine(item);
+
+            #endregion
+            #region Q12
+            var result = ProductList.GroupBy(p => p.Category).Select( g => new
+            {
+                Category = g.Key,
+                CheapestPrice = g.Max(p => p.UnitPrice)
+            });
 
             #endregion
             #endregion
