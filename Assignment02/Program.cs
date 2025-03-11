@@ -70,8 +70,14 @@ namespace Assignment02
             #endregion
 
             #region Q4  Get the total of the numbers in an array.
-            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var result = Arr.Sum();
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Sum();
+            //Console.WriteLine(result);
+
+            #endregion
+            #region Q5
+            var words = File.ReadAllLines("dictionary_english.txt");
+            var result = words.Sum(p => p.Length);
             Console.WriteLine(result);
             #endregion
             #endregion
