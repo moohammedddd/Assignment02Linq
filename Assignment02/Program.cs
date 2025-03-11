@@ -95,12 +95,22 @@ namespace Assignment02
             //Console.WriteLine(result);
             #endregion
             #region Q9
+            //var result = from p in ProductList
+            //             group p by p.Category into g
+            //             select new
+            //             {
+            //                 Category = g.Key,
+            //                 TotalUnitStock = g.Sum(p => p.UnitsInStock)
+            //             };
+            //foreach (var item in result) Console.WriteLine(item);
+            #endregion
+            #region Q10
             var result = from p in ProductList
                          group p by p.Category into g
                          select new
                          {
                              Category = g.Key,
-                             TotalUnitStock = g.Sum(p => p.UnitsInStock)
+                             ChepestSalary = g.Min(g => g.UnitPrice)
                          };
             foreach (var item in result) Console.WriteLine(item);
             #endregion
