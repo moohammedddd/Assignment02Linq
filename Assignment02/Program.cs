@@ -81,10 +81,14 @@ namespace Assignment02
             //Console.WriteLine(result);
             #endregion
             #region Q6
-            var result = words.Select(p => p.Length).Min();
+            //var result = words.Select(p => p.Length).Min();
+            //Console.WriteLine(result);
+
+
+            #endregion
+            #region Q7
+            var result = words.Select(p => p.Length).Max();
             Console.WriteLine(result);
-
-
             #endregion
             #endregion
         }
