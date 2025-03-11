@@ -1,5 +1,6 @@
 ﻿
 using LINQ;
+using System.ComponentModel;
 using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -44,20 +45,28 @@ namespace Assignment02
             #region Q2 2. Return a list of customers and how many orders each has.
             //var result = CustomerList.Select(p => p.CustomerName && p.Order.Count() );
 
-            var result = from p in CustomerList
-                         select new
-                         {
-                            OrderName=  p.CustomerName,
-                            OrderCount =  p.Orders.Count(),
-                        };
-           foreach(var item in result) Console.WriteLine(item);
+            // var result = from p in CustomerList
+            //              select new
+            //              {
+            //                 OrderName=  p.CustomerName,
+            //                 OrderCount =  p.Orders.Count(),
+            //             };
+            //foreach(var item in result) Console.WriteLine(item);
 
-            // Using Flued Syntax 
-            var result01 = CustomerList.Select(p => new
+            // // Using Flued Syntax 
+            // var result01 = CustomerList.Select(p => new
+            // {
+            //   CustomerName =  p.CustomerName,
+            //    OrderCount =  p.Orders.Count()
+            // });
+            #endregion
+            #region Q3 . Return a list of categories and how many products each has
+            var result = ProductList.Select(p => new
             {
-              CustomerName =  p.CustomerName,
-               OrderCount =  p.Orders.Count()
+                p.Category,
+              CountOfProduct =   p.Category.Count()
             });
+            foreach(var item in result) Console.WriteLine(item);
             #endregion
             #endregion
         }
