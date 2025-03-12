@@ -292,15 +292,24 @@ namespace Assignment02
             //}
             #endregion
             #region Q5
-            var result01 = ProductList.Select(p => p.ProductName[p.ProductName.Length - 3]);
-            var result02 = CustomerList.Select(p => p.CustomerName[p.CustomerName.Length - 3]);
-            var result03 = result01.Concat(result02);
+            //var result01 = ProductList.Select(p => p.ProductName[p.ProductName.Length - 3]);
+            //var result02 = CustomerList.Select(p => p.CustomerName[p.CustomerName.Length - 3]);
+            //var result03 = result01.Concat(result02);
 
-            foreach (var item in result03)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in result03)
+            //{
+            //    Console.WriteLine(item);
+            //}
             #endregion
+            #endregion
+
+            #region Quanfifiers
+            #region Q1
+            string[] Words = File.ReadAllLines("dictionary_english.txt");
+            foreach (string word in words) { Console.WriteLine(word); }
+            bool Contain = Words.Any(p => p.Contains("ei"));
+            #endregion
+
             #endregion
         }
     }
