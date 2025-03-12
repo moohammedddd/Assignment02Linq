@@ -157,9 +157,12 @@ namespace Assignment02
             #endregion
 
             #region Q2
-            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
-            var result = Arr.OrderBy(p => p);
-            foreach (var item in result) Console.WriteLine(item);
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var result = Arr.OrderBy(p => p);
+            //foreach (var item in result) Console.WriteLine(item);
+            #endregion
+            #region Q3
+            var result = ProductList.OrderByDescending(p => p.UnitsInStock);    
             #endregion
             #endregion
 
