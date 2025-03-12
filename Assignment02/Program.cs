@@ -219,10 +219,19 @@ namespace Assignment02
             //foreach (var item in result) Console.WriteLine(item);
             #endregion
             #region Q4
-            int [] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var result = Arr
-            .Select((value, index) => new { value, index })
-             .Where(x => x.value == x.index);
+            //int [] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr
+            //.Select((value, index) => new { value, index })
+            // .Where(x => x.value == x.index);
+            #endregion
+            #region Q5
+            int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+            int[] numbersB = { 1, 3, 5, 7, 8 };
+
+            var pairs = from a in numbersA
+                        from b in numbersB
+                        where a < b
+                        select new { A = a, B = b };
             #endregion
             #endregion
         }
