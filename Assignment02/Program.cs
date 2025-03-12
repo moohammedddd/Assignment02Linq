@@ -204,12 +204,19 @@ namespace Assignment02
             //foreach(var item in result) Console.WriteLine(item);
             #endregion
             #region Q2
-            String[] word = { "aPPLE", "BlUeBeRrY", "cHeRry" };
-            var result = words.Select(p => new
+            //String[] word = { "aPPLE", "BlUeBeRrY", "cHeRry" };
+            //var result = words.Select(p => new
+            //{
+            //    Upper = p.ToUpper(),
+            //    Lower = p.ToLower()
+            //});
+            #endregion
+            #region Q3
+            var result = ProductList.Select(p => new
             {
-                Upper = p.ToUpper(),
-                Lower = p.ToLower()
+               Price = p.UnitPrice,
             });
+            foreach (var item in result) Console.WriteLine(item);
             #endregion
             #endregion
         }
