@@ -167,8 +167,13 @@ namespace Assignment02
             //var result = ProductList.OrderByDescending(p => p.UnitsInStock);    
             #endregion
             #region Q4
-            string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            var result = Arr.OrderBy(p => p.Length).ThenBy(p => p);
+            //string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            //var result = Arr.OrderBy(p => p.Length).ThenBy(p => p);
+            //foreach (var item in result) Console.WriteLine(item);
+            #endregion
+            #region Q5
+            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            var result = Arr.OrderBy(p => p.Length).ThenBy(w => w, StringComparer.OrdinalIgnoreCase);
             foreach (var item in result) Console.WriteLine(item);
             #endregion
             #endregion
