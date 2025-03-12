@@ -143,12 +143,21 @@ namespace Assignment02
             //});
             #endregion
             #region Q14
-            var result = ProductList.GroupBy(p => p.Category).Select(p => new
-            {
-                Average = p.Average(p => p.UnitPrice),
-            });
+            //var result = ProductList.GroupBy(p => p.Category).Select(p => new
+            //{
+            //    Average = p.Average(p => p.UnitPrice),
+            //});
             #endregion
             #endregion
+
+            #region Order Operaors
+            #region Q1
+            var result = ProductList.OrderBy(p => p.ProductName);
+            foreach (var item in result) Console.WriteLine(item);
+            #endregion
+
+            #endregion
+
         }
     }
 }
