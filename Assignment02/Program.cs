@@ -152,10 +152,15 @@ namespace Assignment02
 
             #region Order Operaors
             #region Q1
-            var result = ProductList.OrderBy(p => p.ProductName);
-            foreach (var item in result) Console.WriteLine(item);
+            //var result = ProductList.OrderBy(p => p.ProductName);
+            //foreach (var item in result) Console.WriteLine(item);
             #endregion
 
+            #region Q2
+            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            var result = Arr.OrderBy(p => p);
+            foreach (var item in result) Console.WriteLine(item);
+            #endregion
             #endregion
 
         }
