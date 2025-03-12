@@ -310,9 +310,14 @@ namespace Assignment02
             //bool Contain = Words.Any(p => p.Contains("ei"));
             #endregion
             #region Q2
+            //var result = ProductList.GroupBy(ProductList => ProductList.Category)
+            //                        .Where(p => p.Any(p => p.UnitsInStock == 0))
+            //                        .Select(p => p);
+
+            #endregion
+            #region Q3
             var result = ProductList.GroupBy(ProductList => ProductList.Category)
-                                    .Where(p => p.Any(p => p.UnitsInStock == 0))
-                                    .Select(p => p);
+                                    .Where(p => p.All(p => p.UnitsInStock != 0));
 
             #endregion
             #endregion
