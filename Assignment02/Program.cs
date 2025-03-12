@@ -257,19 +257,30 @@ namespace Assignment02
             //foreach(var item in result) Console.WriteLine(item);
             #endregion
             #region Q2
-            var productLetters = ProductList.Select(p => p.ProductName[0]); 
-            var customerLetters = CustomerList.Select(c => c.CustomerName[0]); 
+            //var productLetters = ProductList.Select(p => p.ProductName[0]); 
+            //var customerLetters = CustomerList.Select(c => c.CustomerName[0]); 
 
-            var uniqueLetters = productLetters.Union(customerLetters); 
+            //var uniqueLetters = productLetters.Union(customerLetters); 
+
+            //foreach (var letter in uniqueLetters)
+            //{
+            //    Console.WriteLine(letter);
+            //}
+
+
+            #endregion
+            #region Q3
+            var productLetters = ProductList.Select(p => p.ProductName[0]);
+            var customerLetters = CustomerList.Select(c => c.CustomerName[0]);
+
+            var uniqueLetters = productLetters.Concat(customerLetters);
 
             foreach (var letter in uniqueLetters)
             {
                 Console.WriteLine(letter);
             }
-
-            
-            #endregion
-            #endregion
+                #endregion
+                #endregion
+            }
         }
-    }
 }
