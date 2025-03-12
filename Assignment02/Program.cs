@@ -305,11 +305,16 @@ namespace Assignment02
 
             #region Quanfifiers
             #region Q1
-            string[] Words = File.ReadAllLines("dictionary_english.txt");
-            foreach (string word in words) { Console.WriteLine(word); }
-            bool Contain = Words.Any(p => p.Contains("ei"));
+            //string[] Words = File.ReadAllLines("dictionary_english.txt");
+            //foreach (string word in words) { Console.WriteLine(word); }
+            //bool Contain = Words.Any(p => p.Contains("ei"));
             #endregion
+            #region Q2
+            var result = ProductList.GroupBy(ProductList => ProductList.Category)
+                                    .Where(p => p.Any(p => p.UnitsInStock == 0))
+                                    .Select(p => p);
 
+            #endregion
             #endregion
         }
     }
