@@ -11,6 +11,27 @@ using static LINQ.ListGenerator;
 
 namespace Assignment02
 {
+    internal class CustomerComparer2 : IEqualityComparer<string>
+    {
+        public bool Equals(string x, string y)
+        {
+            if (x == null || y == null)
+                return false;
+            // Trim, convert to lower-case, sort the characters, and then compare.
+            string sortedX = String.Concat(x.Trim().ToLower().OrderBy(c => c));
+            string sortedY = String.Concat(y.Trim().ToLower().OrderBy(c => c));
+            return sortedX == sortedY;
+        }
+
+        public int GetHashCode(string obj)
+        {
+            if (obj == null)
+                return 0;
+            // Use the sorted character string as the hash basis.
+            string sorted = String.Concat(obj.Trim().ToLower().OrderBy(c => c));
+            return sorted.GetHashCode();
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
@@ -343,8 +364,20 @@ namespace Assignment02
             //    }
             #endregion
             #region Q2
-            string[] Words = File.ReadAllLines("dictionary_english.txt");
-            var result = Words.GroupBy(W => W[0]);
+            //string[] Words = File.ReadAllLines("dictionary_english.txt");
+            //var result = Words.GroupBy(W => W[0]);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.Key);
+            //    foreach (var word in item)
+            //    {
+            //        Console.WriteLine(word);
+            //    }
+            //}
+            #endregion
+            #region Q3
+            string[] Arr =  { "from", "salt", "earn", " last", "near", "form" };
+            var result = Arr.GroupBy(w => w.Trim(), new CustomerComparer2());
             foreach (var item in result)
             {
                 Console.WriteLine(item.Key);
