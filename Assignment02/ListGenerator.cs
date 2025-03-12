@@ -253,6 +253,9 @@ namespace LINQ
 										 Total = (decimal)o.Element("total")
 									 }).ToArray()
 							}).ToList();
+		
+		   
+		
 		}
 	}
 
