@@ -212,11 +212,17 @@ namespace Assignment02
             //});
             #endregion
             #region Q3
-            var result = ProductList.Select(p => new
-            {
-               Price = p.UnitPrice,
-            });
-            foreach (var item in result) Console.WriteLine(item);
+            //var result = ProductList.Select(p => new
+            //{
+            //   Price = p.UnitPrice,
+            //});
+            //foreach (var item in result) Console.WriteLine(item);
+            #endregion
+            #region Q4
+            int [] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var result = Arr
+            .Select((value, index) => new { value, index })
+             .Where(x => x.value == x.index);
             #endregion
             #endregion
         }
