@@ -241,11 +241,18 @@ namespace Assignment02
             //             select r;
             #endregion
             #region Q7
-            var result = from o in CustomerList
-                         from order in o.Orders
-                         where order.OrderDate.Year >= 1998
-                         select order;
+            //var result = from o in CustomerList
+            //             from order in o.Orders
+            //             where order.OrderDate.Year >= 1998
+            //             select order;
 
+            #endregion
+            #endregion
+
+            #region Set Operator
+            #region Q1
+            var result = ProductList.Select(p => p.Category).Distinct();
+            foreach(var item in result) Console.WriteLine(item);
             #endregion
             #endregion
         }
