@@ -219,10 +219,11 @@ namespace Assignment02
             //foreach (var item in result) Console.WriteLine(item);
             #endregion
             #region Q4
-            //int [] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
             //var result = Arr
             //.Select((value, index) => new { value, index })
             // .Where(x => x.value == x.index);
+            // foreach (var item in Arr) Console.WriteLine(item);
             #endregion
             #region Q5
             //int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
@@ -232,6 +233,7 @@ namespace Assignment02
             //            from b in numbersB
             //            where a < b
             //            select new { A = a, B = b };
+            //foreach(var item in pairs) Console.WriteLine(item);
             #endregion
             #region Q6
             //var result = from o in CustomerList
@@ -251,8 +253,21 @@ namespace Assignment02
 
             #region Set Operator
             #region Q1
-            var result = ProductList.Select(p => p.Category).Distinct();
-            foreach(var item in result) Console.WriteLine(item);
+            //var result = ProductList.Select(p => p.Category).Distinct();
+            //foreach(var item in result) Console.WriteLine(item);
+            #endregion
+            #region Q2
+            var productLetters = ProductList.Select(p => p.ProductName[0]); 
+            var customerLetters = CustomerList.Select(c => c.CustomerName[0]); 
+
+            var uniqueLetters = productLetters.Union(customerLetters); 
+
+            foreach (var letter in uniqueLetters)
+            {
+                Console.WriteLine(letter);
+            }
+
+            
             #endregion
             #endregion
         }
