@@ -187,15 +187,23 @@ namespace Assignment02
             //.ThenByDescending(w => w, StringComparer.OrdinalIgnoreCase);
             #endregion
             #region Q8
-            string[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-            var result = Arr
-                .Where(d => d.Length > 1 && d[1] == 'i') 
-                .Reverse()                               
-                .ToList();
-            foreach (var item in result) Console.WriteLine(item);
-            #endregion
+            //string[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            //var result = Arr
+            //    .Where(d => d.Length > 1 && d[1] == 'i') 
+            //    .Reverse()                               
+            //    .ToList();
+            //foreach (var item in result) Console.WriteLine(item);
             #endregion
 
+            #endregion
+
+
+            #region – Transformation Operators
+            #region Q1
+            var result = ProductList.Select(p => p.ProductName);
+            foreach(var item in result) Console.WriteLine(item);
+            #endregion
+            #endregion
         }
     }
 }
