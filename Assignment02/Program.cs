@@ -200,8 +200,16 @@ namespace Assignment02
 
             #region – Transformation Operators
             #region Q1
-            var result = ProductList.Select(p => p.ProductName);
-            foreach(var item in result) Console.WriteLine(item);
+            //var result = ProductList.Select(p => p.ProductName);
+            //foreach(var item in result) Console.WriteLine(item);
+            #endregion
+            #region Q2
+            String[] word = { "aPPLE", "BlUeBeRrY", "cHeRry" };
+            var result = words.Select(p => new
+            {
+                Upper = p.ToUpper(),
+                Lower = p.ToLower()
+            });
             #endregion
             #endregion
         }
