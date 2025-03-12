@@ -181,10 +181,18 @@ namespace Assignment02
             //foreach (var item in result) Console.WriteLine(item);
             #endregion
             #region Q7
-            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
-            var sortedWords = Arr
-            .OrderBy(w => w.Length)
-            .ThenByDescending(w => w, StringComparer.OrdinalIgnoreCase);
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var sortedWords = Arr
+            //.OrderBy(w => w.Length)
+            //.ThenByDescending(w => w, StringComparer.OrdinalIgnoreCase);
+            #endregion
+            #region Q8
+            string[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            var result = Arr
+                .Where(d => d.Length > 1 && d[1] == 'i') 
+                .Reverse()                               
+                .ToList();
+            foreach (var item in result) Console.WriteLine(item);
             #endregion
             #endregion
 
