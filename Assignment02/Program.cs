@@ -128,12 +128,19 @@ namespace Assignment02
 
             #endregion
             #region Q12
-            var result = ProductList.GroupBy(p => p.Category).Select( g => new
+            //var result = ProductList.GroupBy(p => p.Category).Select( g => new
+            //{
+            //    Category = g.Key,
+            //    CheapestPrice = g.Max(p => p.UnitPrice)
+            //});
+
+            #endregion
+            #region Q13
+            var result = ProductList.GroupBy(p => p.Category).Select(g => new
             {
                 Category = g.Key,
-                CheapestPrice = g.Max(p => p.UnitPrice)
+                Product = ProductList.Where(p => p.UnitPrice == g.Max(p => p.UnitPrice))
             });
-
             #endregion
             #endregion
         }
