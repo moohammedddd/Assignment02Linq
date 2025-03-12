@@ -225,13 +225,20 @@ namespace Assignment02
             // .Where(x => x.value == x.index);
             #endregion
             #region Q5
-            int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
-            int[] numbersB = { 1, 3, 5, 7, 8 };
+            //int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+            //int[] numbersB = { 1, 3, 5, 7, 8 };
 
-            var pairs = from a in numbersA
-                        from b in numbersB
-                        where a < b
-                        select new { A = a, B = b };
+            //var pairs = from a in numbersA
+            //            from b in numbersB
+            //            where a < b
+            //            select new { A = a, B = b };
+            #endregion
+            #region Q6
+            var result = from o in CustomerList
+                         select o.Orders into Order
+                         from r in Order 
+                         where r.Total < 500
+                         select r;
             #endregion
             #endregion
         }
