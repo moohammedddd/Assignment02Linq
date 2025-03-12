@@ -177,8 +177,14 @@ namespace Assignment02
             //foreach (var item in result) Console.WriteLine(item);
             #endregion
             #region Q6
-            var result = ProductList.OrderByDescending(p => p.Category).ThenBy(p => p.UnitPrice);
-            foreach (var item in result) Console.WriteLine(item);
+            //var result = ProductList.OrderByDescending(p => p.Category).ThenBy(p => p.UnitPrice);
+            //foreach (var item in result) Console.WriteLine(item);
+            #endregion
+            #region Q7
+            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            var sortedWords = Arr
+            .OrderBy(w => w.Length)
+            .ThenByDescending(w => w, StringComparer.OrdinalIgnoreCase);
             #endregion
             #endregion
 
