@@ -325,21 +325,33 @@ namespace Assignment02
 
             #region Grouping Operators
             #region Q1
-            List<int> numbers = new List<int>
-        {
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-        };
-            var groups = numbers.GroupBy(n => n % 5);
+            //    List<int> numbers = new List<int>
+            //{
+            //    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+            //};
+            //    var groups = numbers.GroupBy(n => n % 5);
 
-            // Display the groups
-            foreach (var group in groups)
+            //    // Display the groups
+            //    foreach (var group in groups)
+            //    {
+            //        Console.Write("Remainder " + group.Key + ": ");
+            //        foreach (var num in group)
+            //        {
+            //            Console.Write(num + " ");
+            //        }
+            //        Console.WriteLine(); 
+            //    }
+            #endregion
+            #region Q2
+            string[] Words = File.ReadAllLines("dictionary_english.txt");
+            var result = Words.GroupBy(W => W[0]);
+            foreach (var item in result)
             {
-                Console.Write("Remainder " + group.Key + ": ");
-                foreach (var num in group)
+                Console.WriteLine(item.Key);
+                foreach (var word in item)
                 {
-                    Console.Write(num + " ");
+                    Console.WriteLine(word);
                 }
-                Console.WriteLine(); 
             }
             #endregion
             #endregion
