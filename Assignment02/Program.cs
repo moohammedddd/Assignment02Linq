@@ -234,11 +234,18 @@ namespace Assignment02
             //            select new { A = a, B = b };
             #endregion
             #region Q6
+            //var result = from o in CustomerList
+            //             select o.Orders into Order
+            //             from r in Order 
+            //             where r.Total < 500
+            //             select r;
+            #endregion
+            #region Q7
             var result = from o in CustomerList
-                         select o.Orders into Order
-                         from r in Order 
-                         where r.Total < 500
-                         select r;
+                         from order in o.Orders
+                         where order.OrderDate.Year >= 1998
+                         select order;
+
             #endregion
             #endregion
         }
