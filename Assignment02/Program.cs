@@ -281,14 +281,24 @@ namespace Assignment02
             //}
             #endregion
             #region Q4
-            var productLetters = ProductList.Select(p => p.ProductName[0]);
-            var customerLetters = CustomerList.Select(c => c.CustomerName[0]);
+            //var productLetters = ProductList.Select(p => p.ProductName[0]);
+            //var customerLetters = CustomerList.Select(c => c.CustomerName[0]);
 
-            var uniqueLetters = productLetters.Except(customerLetters);
+            //var uniqueLetters = productLetters.Except(customerLetters);
 
-            foreach (var letter in uniqueLetters)
+            //foreach (var letter in uniqueLetters)
+            //{
+            //    Console.WriteLine(letter);
+            //}
+            #endregion
+            #region Q5
+            var result01 = ProductList.Select(p => p.ProductName[p.ProductName.Length - 3]);
+            var result02 = CustomerList.Select(p => p.CustomerName[p.CustomerName.Length - 3]);
+            var result03 = result01.Concat(result02);
+
+            foreach (var item in result03)
             {
-                Console.WriteLine(letter);
+                Console.WriteLine(item);
             }
             #endregion
             #endregion
